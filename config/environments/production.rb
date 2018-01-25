@@ -1,5 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+  group :production do
+  gem 'pg', '0.20.0'
+end
+
+group :development, :test do
+  gem 'sqlite3', '1.3.13'
+  gem 'byebug',  '9.0.6', platform: :mri
+end
 
   # Code is not reloaded between requests.
   config.cache_classes = true
